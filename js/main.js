@@ -1,14 +1,14 @@
 /* ============================================================
    PROGIC TECHNOLOGIES — Main JavaScript
-   Handles: Navbar, Mobile Menu, Scroll Effects,
-            Intersection Observer, Counters, Tabs, Accordion
+   Handles: Floating Navbar, Mobile Menu, Scroll Effects,
+            Counters, Tabs, Accordion, 3D Card Perspective Tilt
    ============================================================ */
 
 document.addEventListener('DOMContentLoaded', () => {
 
   // ── 1. NAVBAR — Scroll effect ────────────────────────────
   const navbar = document.getElementById('navbar');
-  const scrollThreshold = 60;
+  const scrollThreshold = 40;
 
   function handleNavScroll() {
     if (window.scrollY > scrollThreshold) {
@@ -40,7 +40,6 @@ document.addEventListener('DOMContentLoaded', () => {
   hamburger?.addEventListener('click', openMenu);
   mobileClose?.addEventListener('click', closeMenu);
 
-  // Close when clicking a mobile nav link
   mobileMenu?.querySelectorAll('a').forEach(link => {
     link.addEventListener('click', closeMenu);
   });
@@ -62,7 +61,7 @@ document.addEventListener('DOMContentLoaded', () => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add('visible');
-          revealObserver.unobserve(entry.target); // only once
+          revealObserver.unobserve(entry.target);
         }
       });
     }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
@@ -77,7 +76,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const target    = parseInt(el.getAttribute('data-count'));
     const suffix    = el.getAttribute('data-suffix') || '';
     const prefix    = el.getAttribute('data-prefix') || '';
-    const duration  = 2000; // ms
+    const duration  = 2000;
     const steps     = 60;
     const increment = target / steps;
     let current     = 0;
@@ -128,14 +127,12 @@ document.addEventListener('DOMContentLoaded', () => {
       const isOpen = header.classList.contains('open');
       const body   = header.nextElementSibling;
 
-      // Close all
       accordionHeaders.forEach(h => {
         h.classList.remove('open');
         const b = h.nextElementSibling;
         if (b) b.classList.remove('open');
       });
 
-      // Open clicked (if it was closed)
       if (!isOpen) {
         header.classList.add('open');
         body?.classList.add('open');
@@ -143,7 +140,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Open first accordion by default
   if (accordionHeaders.length) {
     accordionHeaders[0].click();
   }
@@ -160,14 +156,39 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // ── 9. FORM SUBMIT (Contact page) ─────────────────────
+  // ── 9. CONCEPT 6: 3D CARD PERSPECTIVE TILT ─────────────
+  const tiltCards = document.querySelectorAll('.bento-card, .service-card, .tilt-card');
+
+  tiltCards.forEach(card => {
+    card.classList.add('tilt-card');
+
+    card.addEventListener('mousemove', e => {
+      const rect   = card.getBoundingClientRect();
+      const x      = e.clientX - rect.left;
+      const y      = e.clientY - rect.top;
+      const centerX = rect.width / 2;
+      const centerY = rect.height / 2;
+
+      // Max 10 degrees tilt
+      const rotateX = ((y - centerY) / centerY) * -8;
+      const rotateY = ((x - centerX) / centerX) * 8;
+
+      card.style.transform = `perspective(1000px) rotateX(${rotateX.toFixed(2)}deg) rotateY(${rotateY.toFixed(2)}deg) scale3d(1.02, 1.02, 1.02)`;
+    });
+
+    card.addEventListener('mouseleave', () => {
+      card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)';
+    });
+  });
+
+  // ── 10. FORM SUBMIT (Contact page) ─────────────────────
   const contactForm = document.getElementById('contact-form');
   contactForm?.addEventListener('submit', e => {
     e.preventDefault();
     const btn = contactForm.querySelector('button[type="submit"]');
     const originalText = btn.innerHTML;
 
-    btn.innerHTML = '✅ Message Sent!';
+    btn.innerHTML = '<i class="fa-solid fa-circle-check me-2"></i> Message Sent!';
     btn.disabled = true;
     btn.style.background = 'linear-gradient(135deg, #059669, #047857)';
 
@@ -179,24 +200,24 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 3500);
   });
 
-  // ── 10. WAITLIST FORM (Robotics page) ──────────────────
+  // ── 11. WAITLIST FORM (Robotics page) ──────────────────
   const waitlistForm = document.getElementById('waitlist-form');
   waitlistForm?.addEventListener('submit', e => {
     e.preventDefault();
     const btn  = waitlistForm.querySelector('button[type="submit"]');
     const input = waitlistForm.querySelector('input[type="email"]');
 
-    btn.textContent = '🎉 You\'re on the list!';
+    btn.innerHTML = '<i class="fa-solid fa-circle-check me-2"></i> You\'re on the list!';
     btn.disabled = true;
     input.value = '';
 
     setTimeout(() => {
-      btn.textContent = 'Notify Me';
+      btn.innerHTML = '<i class="fa-solid fa-bell me-2"></i> Notify Me';
       btn.disabled = false;
     }, 4000);
   });
 
-  // ── 11. HERO ENTRY ANIMATIONS ──────────────────────────
+  // ── 12. HERO ENTRY ANIMATIONS ──────────────────────────
   const heroElements = document.querySelectorAll('.hero-animate');
   heroElements.forEach((el, i) => {
     el.style.opacity = '0';

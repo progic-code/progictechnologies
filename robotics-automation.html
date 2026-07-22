@@ -19,6 +19,7 @@
       }
     }
   </script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
   <link rel="stylesheet" href="css/style.css" />
   <style>
     .robotics-hero {
@@ -40,15 +41,16 @@
 
     .gear-float {
       position: absolute;
-      font-size: 6rem;
+      font-size: 5rem;
       animation: float 5s ease infinite;
       opacity: 0.08;
+      color: var(--primary-light);
     }
 
-    .gear-1 { top: 15%; left: 8%; animation-delay: 0s; font-size: 5rem; }
-    .gear-2 { top: 20%; right: 10%; animation-delay: 2s; font-size: 8rem; }
-    .gear-3 { bottom: 20%; left: 15%; animation-delay: 1s; font-size: 4rem; }
-    .gear-4 { bottom: 15%; right: 8%; animation-delay: 3s; font-size: 6rem; }
+    .gear-1 { top: 15%; left: 8%; animation-delay: 0s; font-size: 4rem; }
+    .gear-2 { top: 20%; right: 10%; animation-delay: 2s; font-size: 7rem; }
+    .gear-3 { bottom: 20%; left: 15%; animation-delay: 1s; font-size: 3.5rem; }
+    .gear-4 { bottom: 15%; right: 8%; animation-delay: 3s; font-size: 5rem; }
 
     .pulse-ring {
       position: absolute;
@@ -136,19 +138,19 @@
       <li><a href="digital-marketing.html">Digital Marketing</a></li>
       <li><a href="robotics-automation.html">Robotics <span class="nav-badge">Soon</span></a></li>
       <li><a href="other-services.html">Other Services</a></li>
-      <li><a href="contact.html" class="nav-cta">Get a Quote →</a></li>
+      <li><a href="contact.html" class="nav-cta">Get a Quote <i class="fa-solid fa-arrow-right ms-1"></i></a></li>
     </ul>
     <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
   </div>
 </nav>
 <div class="mobile-menu" id="mobile-menu">
-  <button class="mobile-close" id="mobile-close">✕</button>
+  <button class="mobile-close" id="mobile-close"><i class="fa-solid fa-xmark"></i></button>
   <a href="index.html">Home</a>
   <a href="website-designing.html">Website Design</a>
   <a href="digital-marketing.html">Digital Marketing</a>
   <a href="robotics-automation.html">Robotics <span class="nav-badge">Soon</span></a>
   <a href="other-services.html">Other Services</a>
-  <a href="contact.html" class="btn btn-primary mt-4">Get a Quote →</a>
+  <a href="contact.html" class="btn btn-primary mt-4">Get a Quote <i class="fa-solid fa-arrow-right ms-1"></i></a>
 </div>
 
 <!-- ROBOTICS HERO -->
@@ -159,10 +161,10 @@
   <div class="pulse-ring pulse-ring-3"></div>
 
   <!-- Floating gears -->
-  <div class="gear-float gear-1">⚙️</div>
-  <div class="gear-float gear-2">🤖</div>
-  <div class="gear-float gear-3">🔧</div>
-  <div class="gear-float gear-4">⚙️</div>
+  <div class="gear-float gear-1"><i class="fa-solid fa-gear"></i></div>
+  <div class="gear-float gear-2"><i class="fa-solid fa-robot"></i></div>
+  <div class="gear-float gear-3"><i class="fa-solid fa-wrench"></i></div>
+  <div class="gear-float gear-4"><i class="fa-solid fa-gear"></i></div>
 
   <!-- Circuit grid -->
   <div class="hero-grid"></div>
@@ -171,7 +173,7 @@
   <div style="position:relative;z-index:5;padding:2rem;max-width:800px;">
 
     <div class="coming-soon-badge hero-animate">
-      🚧 &nbsp; Draft — Coming Soon
+      <i class="fa-solid fa-triangle-exclamation me-2"></i> Draft — Coming Soon
     </div>
 
     <h1 class="hero-animate" style="font-size:clamp(2.5rem,7vw,5rem);font-weight:900;line-height:1.1;margin-bottom:1.25rem;">
@@ -193,17 +195,17 @@
           id="waitlist-email"
         />
         <button type="submit" class="btn btn-accent">
-          🔔 Notify Me
+          <i class="fa-solid fa-bell me-2"></i> Notify Me
         </button>
       </div>
       <p style="font-size:0.8rem;color:#64748B;margin-top:0.75rem;">
-        No spam. Just one email when we launch. 🚀
+        No spam. Just one email when we launch. <i class="fa-solid fa-rocket ms-1"></i>
       </p>
     </form>
 
     <!-- Back link -->
     <a href="index.html" style="font-size:0.9rem;color:#64748B;display:inline-flex;align-items:center;gap:0.4rem;transition:color 0.3s;" onmouseover="this.style.color='#9F67F0'" onmouseout="this.style.color='#64748B'">
-      ← Back to Home
+      <i class="fa-solid fa-arrow-left me-1"></i> Back to Home
     </a>
   </div>
 </section>
@@ -219,35 +221,35 @@
 
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
       <div class="preview-card reveal delay-100">
-        <div style="font-size:2.5rem;margin-bottom:1rem;">🤖</div>
+        <div style="font-size:2.5rem;margin-bottom:1rem;"><i class="fa-solid fa-robot text-purple-400"></i></div>
         <h3 style="font-size:1.1rem;font-weight:700;margin-bottom:0.75rem;color:#F8FAFC;">Industrial Robotics</h3>
         <p style="font-size:0.875rem;color:#94A3B8;line-height:1.6;">
           Automated robotic arms and systems for manufacturing, assembly, and quality control — reducing human error and boosting throughput.
         </p>
         <div style="margin-top:1rem;padding:0.5rem 1rem;background:rgba(245,158,11,0.1);border:1px solid rgba(245,158,11,0.2);border-radius:50px;display:inline-block;font-size:0.75rem;color:#F59E0B;font-weight:600;">
-          🔮 In Development
+          <i class="fa-solid fa-spinner fa-spin me-1"></i> In Development
         </div>
       </div>
 
       <div class="preview-card reveal delay-200">
-        <div style="font-size:2.5rem;margin-bottom:1rem;">🧠</div>
+        <div style="font-size:2.5rem;margin-bottom:1rem;"><i class="fa-solid fa-brain text-purple-400"></i></div>
         <h3 style="font-size:1.1rem;font-weight:700;margin-bottom:0.75rem;color:#F8FAFC;">AI Process Automation</h3>
         <p style="font-size:0.875rem;color:#94A3B8;line-height:1.6;">
           Intelligent RPA (Robotic Process Automation) powered by AI — automate repetitive business workflows, data entry, and decision-making.
         </p>
         <div style="margin-top:1rem;padding:0.5rem 1rem;background:rgba(245,158,11,0.1);border:1px solid rgba(245,158,11,0.2);border-radius:50px;display:inline-block;font-size:0.75rem;color:#F59E0B;font-weight:600;">
-          🔮 In Development
+          <i class="fa-solid fa-spinner fa-spin me-1"></i> In Development
         </div>
       </div>
 
       <div class="preview-card reveal delay-300">
-        <div style="font-size:2.5rem;margin-bottom:1rem;">🏭</div>
+        <div style="font-size:2.5rem;margin-bottom:1rem;"><i class="fa-solid fa-industry text-purple-400"></i></div>
         <h3 style="font-size:1.1rem;font-weight:700;margin-bottom:0.75rem;color:#F8FAFC;">Smart Manufacturing</h3>
         <p style="font-size:0.875rem;color:#94A3B8;line-height:1.6;">
           IoT-connected production lines with real-time monitoring, predictive maintenance, and adaptive automation for Industry 4.0.
         </p>
         <div style="margin-top:1rem;padding:0.5rem 1rem;background:rgba(245,158,11,0.1);border:1px solid rgba(245,158,11,0.2);border-radius:50px;display:inline-block;font-size:0.75rem;color:#F59E0B;font-weight:600;">
-          🔮 In Development
+          <i class="fa-solid fa-spinner fa-spin me-1"></i> In Development
         </div>
       </div>
     </div>
@@ -262,10 +264,10 @@
         <div class="footer-logo"><img src="assert/progic_login.jpeg" alt="Progic Technologies" style="height:48px;border-radius:8px;" /></div>
         <p class="footer-tagline">Transforming ideas into digital reality. Your growth partner for websites, marketing, automation, and talent.</p>
         <div class="social-links">
-          <a href="#" class="social-link" aria-label="LinkedIn">in</a>
-          <a href="#" class="social-link" aria-label="Instagram">📸</a>
-          <a href="#" class="social-link" aria-label="Facebook">f</a>
-          <a href="#" class="social-link" aria-label="YouTube">▶</a>
+          <a href="#" class="social-link" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="#" class="social-link" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" class="social-link" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" class="social-link" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
         </div>
       </div>
       <div class="footer-col">
@@ -294,15 +296,15 @@
           <li><a href="contact.html">Contact Us</a></li>
         </ul>
         <div style="margin-top:1.25rem;font-size:0.875rem;color:#64748B;">
-          <div style="margin-bottom:0.4rem;">📧 hello@progictechnologies.com</div>
-          <div style="margin-bottom:0.4rem;">📞 +91 98765 43210</div>
-          <div>📍 Chennai, Tamil Nadu, India</div>
+          <div style="margin-bottom:0.4rem;"><i class="fa-solid fa-envelope me-2"></i> hello@progictechnologies.com</div>
+          <div style="margin-bottom:0.4rem;"><i class="fa-solid fa-phone me-2"></i> +91 98765 43210</div>
+          <div><i class="fa-solid fa-location-dot me-2"></i> Chennai, Tamil Nadu, India</div>
         </div>
       </div>
     </div>
     <div class="footer-bottom">
       <p class="footer-copy">© 2025 <span>Progic Technologies</span>. All rights reserved.</p>
-      <p class="footer-copy">Designed with ❤️ in India</p>
+      <p class="footer-copy">Designed with <i class="fa-solid fa-heart text-red-500 mx-1"></i> in India</p>
     </div>
   </div>
 </footer>
