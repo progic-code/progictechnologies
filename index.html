@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Progic Technologies — Transforming Ideas into Digital Reality</title>
+  <meta name="description" content="Progic Technologies offers premium Website Design, Digital Marketing, Robotics & Automation, and Manpower Sourcing services to grow your business." />
+  <link rel="icon" type="image/jpeg" href="assert/progic_login.jpeg" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#7C3AED',
+            'primary-light': '#9F67F0',
+            'primary-dark': '#5B21B6',
+            accent: '#F59E0B',
+            'accent-light': '#FCD34D',
+            dark: '#0F0A1E',
+            surface: '#1A1033',
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════════════════════
+     NAVBAR
+══════════════════════════════════════════════════════════════ -->
+<nav id="navbar">
+  <div class="nav-container">
+    <a href="index.html" class="nav-logo">
+      <img src="assert/progic_login.jpeg" alt="Progic Technologies" />
+    </a>
+
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="website-designing.html">Website Design</a></li>
+      <li><a href="digital-marketing.html">Digital Marketing</a></li>
+      <li><a href="robotics-automation.html">Robotics <span class="nav-badge">Soon</span></a></li>
+      <li><a href="other-services.html">Other Services</a></li>
+      <li><a href="contact.html" class="nav-cta">Get a Quote →</a></li>
+    </ul>
+
+    <div class="hamburger" id="hamburger">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</nav>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu" id="mobile-menu">
+  <button class="mobile-close" id="mobile-close">✕</button>
+  <a href="index.html">Home</a>
+  <a href="website-designing.html">Website Design</a>
+  <a href="digital-marketing.html">Digital Marketing</a>
+  <a href="robotics-automation.html">Robotics <span class="nav-badge">Soon</span></a>
+  <a href="other-services.html">Other Services</a>
+  <a href="contact.html" class="btn btn-primary mt-4">Get a Quote →</a>
+</div>
+
+<!-- ══════════════════════════════════════════════════════════
+     HERO
+══════════════════════════════════════════════════════════════ -->
+<section class="hero" id="home">
+  <div class="hero-grid"></div>
+  <div class="hero-mesh"></div>
+
+  <!-- Floating orbs -->
+  <div style="position:absolute;top:20%;right:10%;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,rgba(124,58,237,0.15),transparent);animation:float 6s ease infinite;pointer-events:none;"></div>
+  <div style="position:absolute;bottom:15%;left:5%;width:200px;height:200px;border-radius:50%;background:radial-gradient(circle,rgba(245,158,11,0.1),transparent);animation:float 8s ease infinite 2s;pointer-events:none;"></div>
+
+  <div class="hero-content container" style="max-width:1280px;margin:0 auto;">
+    <div class="max-w-3xl">
+      <div class="section-label hero-animate">🚀 Welcome to Progic Technologies</div>
+
+      <h1 class="hero-animate" style="font-size:clamp(2.5rem,6vw,4.5rem);font-weight:900;line-height:1.1;margin-bottom:1.5rem;color:#F8FAFC;">
+        Transforming Ideas<br />
+        into <span class="gradient-text">Digital Reality</span>
+      </h1>
+
+      <p class="section-sub hero-animate" style="margin-bottom:2.5rem;font-size:1.2rem;">
+        We design stunning websites, drive growth through digital marketing, and build tomorrow's automation solutions — all under one roof.
+      </p>
+
+      <div class="hero-animate flex gap-4 flex-wrap">
+        <a href="#services" class="btn btn-primary" style="font-size:1rem;">
+          Explore Services <span>↓</span>
+        </a>
+        <a href="contact.html" class="btn btn-outline" style="font-size:1rem;">
+          Get a Free Quote →
+        </a>
+      </div>
+
+      <!-- Hero Stats mini -->
+      <div class="hero-animate flex gap-8 mt-12 flex-wrap">
+        <div>
+          <div style="font-size:1.75rem;font-weight:800;color:#F59E0B;">150+</div>
+          <div style="font-size:0.8rem;color:#94A3B8;font-weight:500;">Projects Delivered</div>
+        </div>
+        <div style="width:1px;background:rgba(124,58,237,0.3);"></div>
+        <div>
+          <div style="font-size:1.75rem;font-weight:800;color:#F59E0B;">80+</div>
+          <div style="font-size:0.8rem;color:#94A3B8;font-weight:500;">Happy Clients</div>
+        </div>
+        <div style="width:1px;background:rgba(124,58,237,0.3);"></div>
+        <div>
+          <div style="font-size:1.75rem;font-weight:800;color:#F59E0B;">5+</div>
+          <div style="font-size:0.8rem;color:#94A3B8;font-weight:500;">Years Experience</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════
+     SERVICES GRID
+══════════════════════════════════════════════════════════════ -->
+<section class="section" id="services">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label reveal">Our Services</div>
+      <h2 class="section-title reveal">Everything You Need to<br /><span class="gradient-text">Succeed Online</span></h2>
+      <p class="section-sub mx-auto reveal">From pixel-perfect websites to data-driven marketing campaigns — we deliver measurable results.</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+
+      <!-- Website Design -->
+      <a href="website-designing.html" class="glass-card service-card reveal delay-100 block">
+        <div class="card-icon">🌐</div>
+        <h3 style="font-size:1.2rem;font-weight:700;margin-bottom:0.75rem;color:#F8FAFC;">Website Designing</h3>
+        <p style="font-size:0.875rem;color:#94A3B8;line-height:1.6;margin-bottom:1.25rem;">
+          From basic landing pages to React-powered web apps and Google Sites — built to convert.
+        </p>
+        <div style="font-size:0.8rem;color:#9F67F0;font-weight:600;display:flex;align-items:center;gap:0.4rem;">
+          Learn more <span>→</span>
+        </div>
+      </a>
+
+      <!-- Digital Marketing -->
+      <a href="digital-marketing.html" class="glass-card service-card reveal delay-200 block">
+        <div class="card-icon">📈</div>
+        <h3 style="font-size:1.2rem;font-weight:700;margin-bottom:0.75rem;color:#F8FAFC;">Digital Marketing</h3>
+        <p style="font-size:0.875rem;color:#94A3B8;line-height:1.6;margin-bottom:1.25rem;">
+          Meta Ads, SEO, Google Ads, Social Media & YouTube — full-funnel growth strategies.
+        </p>
+        <div style="font-size:0.8rem;color:#9F67F0;font-weight:600;display:flex;align-items:center;gap:0.4rem;">
+          Learn more <span>→</span>
+        </div>
+      </a>
+
+      <!-- Robotics -->
+      <a href="robotics-automation.html" class="glass-card service-card reveal delay-300 block">
+        <div class="card-icon">🤖</div>
+        <h3 style="font-size:1.2rem;font-weight:700;margin-bottom:0.75rem;color:#F8FAFC;">Robotics & Automation</h3>
+        <p style="font-size:0.875rem;color:#94A3B8;line-height:1.6;margin-bottom:1.25rem;">
+          Cutting-edge process automation and AI-driven robotic solutions. <em style="color:#F59E0B;">Coming soon!</em>
+        </p>
+        <div style="font-size:0.8rem;color:#F59E0B;font-weight:600;display:flex;align-items:center;gap:0.4rem;">
+          Join waitlist <span>→</span>
+        </div>
+      </a>
+
+      <!-- Other Services -->
+      <a href="other-services.html" class="glass-card service-card reveal delay-400 block">
+        <div class="card-icon">🤝</div>
+        <h3 style="font-size:1.2rem;font-weight:700;margin-bottom:0.75rem;color:#F8FAFC;">Other Services</h3>
+        <p style="font-size:0.875rem;color:#94A3B8;line-height:1.6;margin-bottom:1.25rem;">
+          Manpower Sourcing & Procurement — verified talent, fast turnaround, NDA-backed.
+        </p>
+        <div style="font-size:0.8rem;color:#9F67F0;font-weight:600;display:flex;align-items:center;gap:0.4rem;">
+          Learn more <span>→</span>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════
+     WHY PROGIC
+══════════════════════════════════════════════════════════════ -->
+<section class="section" style="background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label reveal">Why Choose Us</div>
+      <h2 class="section-title reveal">The <span class="gradient-text">Progic Advantage</span></h2>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div class="glass-card service-card reveal delay-100 text-center">
+        <div class="card-icon mx-auto" style="margin-left:auto;margin-right:auto;">⚡</div>
+        <h3 style="font-size:1.15rem;font-weight:700;margin-bottom:0.75rem;">Expert Team</h3>
+        <p style="font-size:0.875rem;color:#94A3B8;line-height:1.6;">
+          Seasoned professionals with domain expertise in tech, marketing, and operations — delivering excellence every time.
+        </p>
+      </div>
+      <div class="glass-card service-card reveal delay-200 text-center">
+        <div class="card-icon mx-auto" style="margin-left:auto;margin-right:auto;">🎯</div>
+        <h3 style="font-size:1.15rem;font-weight:700;margin-bottom:0.75rem;">Proven Results</h3>
+        <p style="font-size:0.875rem;color:#94A3B8;line-height:1.6;">
+          Data-driven decisions backed by real metrics. We don't just deliver work — we deliver outcomes that matter.
+        </p>
+      </div>
+      <div class="glass-card service-card reveal delay-300 text-center">
+        <div class="card-icon mx-auto" style="margin-left:auto;margin-right:auto;">🔄</div>
+        <h3 style="font-size:1.15rem;font-weight:700;margin-bottom:0.75rem;">End-to-End Solutions</h3>
+        <p style="font-size:0.875rem;color:#94A3B8;line-height:1.6;">
+          From strategy to execution to optimization — Progic is your single partner for all digital and business needs.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════
+     STATS BAR
+══════════════════════════════════════════════════════════════ -->
+<section class="stats-bar">
+  <div class="container">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+      <div class="stat-item reveal">
+        <span class="stat-number" data-count="150" data-suffix="+">0+</span>
+        <div class="stat-label">Projects Delivered</div>
+      </div>
+      <div class="stat-item reveal delay-100">
+        <span class="stat-number" data-count="80" data-suffix="+">0+</span>
+        <div class="stat-label">Happy Clients</div>
+      </div>
+      <div class="stat-item reveal delay-200">
+        <span class="stat-number" data-count="5" data-suffix="+">0+</span>
+        <div class="stat-label">Years Experience</div>
+      </div>
+      <div class="stat-item reveal delay-300">
+        <span class="stat-number" data-count="98" data-suffix="%">0%</span>
+        <div class="stat-label">Client Satisfaction</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════
+     TESTIMONIALS
+══════════════════════════════════════════════════════════════ -->
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label reveal">Testimonials</div>
+      <h2 class="section-title reveal">What Our <span class="gradient-text">Clients Say</span></h2>
+    </div>
+
+    <div class="testimonials-track">
+      <div class="glass-card testimonial-card reveal delay-100">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">"Progic completely transformed our online presence. Our website traffic doubled within two months of their SEO work, and the design is stunning."</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">RS</div>
+          <div>
+            <div style="font-weight:600;font-size:0.9rem;">Rajesh S.</div>
+            <div style="font-size:0.8rem;color:#94A3B8;">CEO, TechNova Solutions</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="glass-card testimonial-card reveal delay-200">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">"Their Meta Ads campaigns delivered a 320% ROI in just 6 weeks. The team was incredibly professional, responsive, and results-focused."</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">PA</div>
+          <div>
+            <div style="font-weight:600;font-size:0.9rem;">Priya A.</div>
+            <div style="font-size:0.8rem;color:#94A3B8;">Founder, Bloom Retail</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="glass-card testimonial-card reveal delay-300">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">"The manpower sourcing team found us 5 qualified engineers within a week. Progic's network and speed are unmatched in the industry."</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">KM</div>
+          <div>
+            <div style="font-weight:600;font-size:0.9rem;">Karthik M.</div>
+            <div style="font-size:0.8rem;color:#94A3B8;">HR Head, ManuFlex Industries</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════
+     CTA BANNER
+══════════════════════════════════════════════════════════════ -->
+<section class="cta-banner reveal">
+  <div class="container">
+    <div class="section-label" style="justify-content:center;margin-bottom:1rem;">🚀 Ready to Grow?</div>
+    <h2 style="font-size:clamp(2rem,4vw,3rem);font-weight:900;color:#fff;margin-bottom:1rem;">
+      Let's Build Something <span style="color:#F59E0B;">Amazing Together</span>
+    </h2>
+    <p style="font-size:1.1rem;color:rgba(255,255,255,0.8);margin-bottom:2.5rem;max-width:550px;margin-left:auto;margin-right:auto;">
+      Partner with Progic Technologies and watch your business reach new heights in the digital world.
+    </p>
+    <a href="contact.html" class="btn btn-accent" style="font-size:1.1rem;padding:1rem 2.5rem;">
+      Get a Free Quote →
+    </a>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════
+     FOOTER
+══════════════════════════════════════════════════════════════ -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo">
+          <img src="assert/progic_login.jpeg" alt="Progic Technologies" style="height:48px;border-radius:8px;" />
+        </div>
+        <p class="footer-tagline">Transforming ideas into digital reality. Your growth partner for websites, marketing, automation, and talent.</p>
+        <div class="social-links">
+          <a href="#" class="social-link" aria-label="LinkedIn">in</a>
+          <a href="#" class="social-link" aria-label="Instagram">📸</a>
+          <a href="#" class="social-link" aria-label="Facebook">f</a>
+          <a href="#" class="social-link" aria-label="YouTube">▶</a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Website Design</h4>
+        <ul class="footer-links">
+          <li><a href="website-designing.html#basic">Basic Websites</a></li>
+          <li><a href="website-designing.html#react">React-Based</a></li>
+          <li><a href="website-designing.html#google-sites">Google Sites</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Digital Marketing</h4>
+        <ul class="footer-links">
+          <li><a href="digital-marketing.html">Meta Ads</a></li>
+          <li><a href="digital-marketing.html">SEO</a></li>
+          <li><a href="digital-marketing.html">Google Ads</a></li>
+          <li><a href="digital-marketing.html">Social Media</a></li>
+          <li><a href="digital-marketing.html">YouTube</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul class="footer-links">
+          <li><a href="other-services.html">Manpower Sourcing</a></li>
+          <li><a href="robotics-automation.html">Robotics (Soon)</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+        <div style="margin-top:1.25rem;font-size:0.875rem;color:#64748B;">
+          <div style="margin-bottom:0.4rem;">📧 hello@progictechnologies.com</div>
+          <div style="margin-bottom:0.4rem;">📞 +91 98765 43210</div>
+          <div>📍 Chennai, Tamil Nadu, India</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p class="footer-copy">© 2025 <span>Progic Technologies</span>. All rights reserved.</p>
+      <p class="footer-copy">Designed with ❤️ in India</p>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

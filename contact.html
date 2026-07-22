@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us — Progic Technologies</title>
+  <meta name="description" content="Get in touch with Progic Technologies. Request a quote for website design, digital marketing, or manpower sourcing. We respond within 24 hours." />
+  <link rel="icon" type="image/jpeg" href="assert/progic_login.jpeg" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#7C3AED', 'primary-light': '#9F67F0', 'primary-dark': '#5B21B6',
+            accent: '#F59E0B', 'accent-light': '#FCD34D', dark: '#0F0A1E', surface: '#1A1033',
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav id="navbar">
+  <div class="nav-container">
+    <a href="index.html" class="nav-logo"><img src="assert/progic_login.jpeg" alt="Progic Technologies" /></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="website-designing.html">Website Design</a></li>
+      <li><a href="digital-marketing.html">Digital Marketing</a></li>
+      <li><a href="robotics-automation.html">Robotics <span class="nav-badge">Soon</span></a></li>
+      <li><a href="other-services.html">Other Services</a></li>
+      <li><a href="contact.html" class="nav-cta">Get a Quote →</a></li>
+    </ul>
+    <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobile-menu">
+  <button class="mobile-close" id="mobile-close">✕</button>
+  <a href="index.html">Home</a>
+  <a href="website-designing.html">Website Design</a>
+  <a href="digital-marketing.html">Digital Marketing</a>
+  <a href="robotics-automation.html">Robotics <span class="nav-badge">Soon</span></a>
+  <a href="other-services.html">Other Services</a>
+  <a href="contact.html" class="btn btn-primary mt-4">Get a Quote →</a>
+</div>
+
+<!-- PAGE HERO -->
+<section class="page-hero" style="min-height:40vh;">
+  <div class="hero-grid"></div>
+  <div class="hero-mesh"></div>
+  <div class="container" style="position:relative;z-index:2;padding-top:3rem;padding-bottom:2rem;">
+    <div class="section-label hero-animate">✉️ Let's Connect</div>
+    <h1 class="hero-animate" style="font-size:clamp(2rem,5vw,3.5rem);font-weight:900;line-height:1.1;margin-bottom:1rem;max-width:650px;">
+      Let's Build Something <span class="gradient-text">Great Together</span>
+    </h1>
+    <p class="section-sub hero-animate" style="max-width:520px;">
+      Tell us about your project and we'll get back to you with a tailored proposal within 24 hours.
+    </p>
+  </div>
+</section>
+
+<!-- CONTACT SECTION -->
+<section class="section">
+  <div class="container">
+    <div class="grid grid-cols-1 lg:grid-cols-5 gap-12">
+
+      <!-- CONTACT FORM (3 cols) -->
+      <div class="lg:col-span-3 reveal-left">
+        <div class="glass-card" style="padding:2.5rem;">
+          <h2 style="font-size:1.5rem;font-weight:800;margin-bottom:0.5rem;color:#F8FAFC;">Send Us a Message</h2>
+          <p style="font-size:0.875rem;color:#94A3B8;margin-bottom:2rem;">
+            Fill out the form below and our team will reach out shortly.
+          </p>
+
+          <form id="contact-form">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div class="form-group">
+                <label class="form-label" for="contact-name">Full Name *</label>
+                <input
+                  type="text"
+                  id="contact-name"
+                  class="form-control"
+                  placeholder="John Doe"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="contact-email">Email Address *</label>
+                <input
+                  type="email"
+                  id="contact-email"
+                  class="form-control"
+                  placeholder="john@company.com"
+                  required
+                />
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div class="form-group">
+                <label class="form-label" for="contact-phone">Phone Number</label>
+                <input
+                  type="tel"
+                  id="contact-phone"
+                  class="form-control"
+                  placeholder="+91 98765 43210"
+                />
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="contact-service">Service Interested In *</label>
+                <select id="contact-service" class="form-control" required>
+                  <option value="" disabled selected>Select a service...</option>
+                  <option value="basic-website">Basic Website Design</option>
+                  <option value="react-website">React-Based Website</option>
+                  <option value="google-sites">Google Sites Design</option>
+                  <option value="meta-ads">Meta Ads (Facebook / Instagram)</option>
+                  <option value="seo">SEO</option>
+                  <option value="google-ads">Google Ads</option>
+                  <option value="social-media">Social Media Marketing</option>
+                  <option value="youtube">YouTube Marketing</option>
+                  <option value="manpower">Manpower Sourcing</option>
+                  <option value="robotics">Robotics & Automation (Waitlist)</option>
+                  <option value="other">Other / Not Sure</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="contact-company">Company / Organization</label>
+              <input
+                type="text"
+                id="contact-company"
+                class="form-control"
+                placeholder="Your Company Name"
+              />
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="contact-message">Tell Us About Your Project *</label>
+              <textarea
+                id="contact-message"
+                class="form-control"
+                placeholder="Describe your project, goals, and any specific requirements or questions..."
+                required
+              ></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary" style="width:100%;font-size:1rem;justify-content:center;padding:1rem;">
+              🚀 Send Message
+            </button>
+
+            <p style="font-size:0.8rem;color:#64748B;text-align:center;margin-top:1rem;">
+              🔒 Your information is safe and will never be shared with third parties.
+            </p>
+          </form>
+        </div>
+      </div>
+
+      <!-- CONTACT INFO (2 cols) -->
+      <div class="lg:col-span-2 reveal-right">
+        <!-- Info Card -->
+        <div class="glass-card" style="padding:2rem;margin-bottom:1.5rem;">
+          <h3 style="font-size:1.15rem;font-weight:700;margin-bottom:1.5rem;color:#F8FAFC;">Contact Information</h3>
+
+          <div class="contact-info-item">
+            <div class="contact-icon">📧</div>
+            <div>
+              <div style="font-size:0.8rem;color:#64748B;font-weight:500;margin-bottom:0.25rem;">Email</div>
+              <div style="font-weight:600;color:#F8FAFC;">hello@progictechnologies.com</div>
+              <div style="font-size:0.8rem;color:#94A3B8;">We reply within 24 hours</div>
+            </div>
+          </div>
+
+          <div class="contact-info-item">
+            <div class="contact-icon">📞</div>
+            <div>
+              <div style="font-size:0.8rem;color:#64748B;font-weight:500;margin-bottom:0.25rem;">Phone</div>
+              <div style="font-weight:600;color:#F8FAFC;">+91 98765 43210</div>
+              <div style="font-size:0.8rem;color:#94A3B8;">Mon–Sat, 9AM–7PM IST</div>
+            </div>
+          </div>
+
+          <div class="contact-info-item">
+            <div class="contact-icon">📍</div>
+            <div>
+              <div style="font-size:0.8rem;color:#64748B;font-weight:500;margin-bottom:0.25rem;">Office</div>
+              <div style="font-weight:600;color:#F8FAFC;">Chennai, Tamil Nadu</div>
+              <div style="font-size:0.8rem;color:#94A3B8;">India — 600001</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Social Links -->
+        <div class="glass-card" style="padding:2rem;margin-bottom:1.5rem;">
+          <h3 style="font-size:1.1rem;font-weight:700;margin-bottom:1.25rem;color:#F8FAFC;">Follow Us</h3>
+          <div style="display:flex;flex-direction:column;gap:0.75rem;">
+            <a href="#" style="display:flex;align-items:center;gap:0.75rem;padding:0.75rem;background:var(--surface-2);border-radius:10px;border:1px solid var(--border);transition:all 0.3s;color:var(--text-muted);font-size:0.9rem;font-weight:500;" onmouseover="this.style.borderColor='#7C3AED';this.style.color='#F8FAFC'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--text-muted)'">
+              <span style="font-size:1.25rem;">💼</span> LinkedIn — Progic Technologies
+            </a>
+            <a href="#" style="display:flex;align-items:center;gap:0.75rem;padding:0.75rem;background:var(--surface-2);border-radius:10px;border:1px solid var(--border);transition:all 0.3s;color:var(--text-muted);font-size:0.9rem;font-weight:500;" onmouseover="this.style.borderColor='#7C3AED';this.style.color='#F8FAFC'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--text-muted)'">
+              <span style="font-size:1.25rem;">📸</span> Instagram — @progictechnologies
+            </a>
+            <a href="#" style="display:flex;align-items:center;gap:0.75rem;padding:0.75rem;background:var(--surface-2);border-radius:10px;border:1px solid var(--border);transition:all 0.3s;color:var(--text-muted);font-size:0.9rem;font-weight:500;" onmouseover="this.style.borderColor='#7C3AED';this.style.color='#F8FAFC'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--text-muted)'">
+              <span style="font-size:1.25rem;">📘</span> Facebook — Progic Technologies
+            </a>
+            <a href="#" style="display:flex;align-items:center;gap:0.75rem;padding:0.75rem;background:var(--surface-2);border-radius:10px;border:1px solid var(--border);transition:all 0.3s;color:var(--text-muted);font-size:0.9rem;font-weight:500;" onmouseover="this.style.borderColor='#7C3AED';this.style.color='#F8FAFC'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--text-muted)'">
+              <span style="font-size:1.25rem;">▶</span> YouTube — Progic Technologies
+            </a>
+          </div>
+        </div>
+
+        <!-- Response Time Badge -->
+        <div class="glass-card" style="padding:1.5rem;text-align:center;border-color:rgba(245,158,11,0.3);">
+          <div style="font-size:2rem;margin-bottom:0.5rem;">⚡</div>
+          <div style="font-weight:700;font-size:1.1rem;color:#F59E0B;margin-bottom:0.25rem;">Fast Response Guarantee</div>
+          <div style="font-size:0.875rem;color:#94A3B8;">We respond to all inquiries within <strong style="color:#F8FAFC;">24 business hours</strong></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- MAP PLACEHOLDER -->
+<section class="section-sm" style="background:var(--surface);border-top:1px solid var(--border);">
+  <div class="container">
+    <div class="reveal" style="border-radius:var(--radius-lg);overflow:hidden;border:1px solid var(--border);">
+      <div style="background:linear-gradient(135deg,var(--surface-2),var(--surface));height:280px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1rem;">
+        <div style="font-size:4rem;">📍</div>
+        <div style="font-size:1.15rem;font-weight:700;color:#F8FAFC;">Progic Technologies</div>
+        <div style="font-size:0.9rem;color:#94A3B8;">Chennai, Tamil Nadu, India — 600001</div>
+        <a href="https://maps.google.com/?q=Chennai,Tamil+Nadu,India" target="_blank" class="btn btn-outline btn-sm" style="margin-top:0.5rem;">
+          📌 View on Google Maps
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo"><img src="assert/progic_login.jpeg" alt="Progic Technologies" style="height:48px;border-radius:8px;" /></div>
+        <p class="footer-tagline">Transforming ideas into digital reality. Your growth partner for websites, marketing, automation, and talent.</p>
+        <div class="social-links">
+          <a href="#" class="social-link" aria-label="LinkedIn">in</a>
+          <a href="#" class="social-link" aria-label="Instagram">📸</a>
+          <a href="#" class="social-link" aria-label="Facebook">f</a>
+          <a href="#" class="social-link" aria-label="YouTube">▶</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Website Design</h4>
+        <ul class="footer-links">
+          <li><a href="website-designing.html">Basic Websites</a></li>
+          <li><a href="website-designing.html">React-Based</a></li>
+          <li><a href="website-designing.html">Google Sites</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Digital Marketing</h4>
+        <ul class="footer-links">
+          <li><a href="digital-marketing.html">Meta Ads</a></li>
+          <li><a href="digital-marketing.html">SEO</a></li>
+          <li><a href="digital-marketing.html">Google Ads</a></li>
+          <li><a href="digital-marketing.html">Social Media</a></li>
+          <li><a href="digital-marketing.html">YouTube</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul class="footer-links">
+          <li><a href="other-services.html">Manpower Sourcing</a></li>
+          <li><a href="robotics-automation.html">Robotics (Soon)</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+        <div style="margin-top:1.25rem;font-size:0.875rem;color:#64748B;">
+          <div style="margin-bottom:0.4rem;">📧 hello@progictechnologies.com</div>
+          <div style="margin-bottom:0.4rem;">📞 +91 98765 43210</div>
+          <div>📍 Chennai, Tamil Nadu, India</div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">© 2025 <span>Progic Technologies</span>. All rights reserved.</p>
+      <p class="footer-copy">Designed with ❤️ in India</p>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

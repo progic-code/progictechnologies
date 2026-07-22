@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Robotics & Automation — Coming Soon | Progic Technologies</title>
+  <meta name="description" content="Progic Technologies is launching cutting-edge Robotics and Process Automation solutions. Join the waitlist to be first in line." />
+  <link rel="icon" type="image/jpeg" href="assert/progic_login.jpeg" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#7C3AED', 'primary-light': '#9F67F0', 'primary-dark': '#5B21B6',
+            accent: '#F59E0B', 'accent-light': '#FCD34D', dark: '#0F0A1E', surface: '#1A1033',
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    .robotics-hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: radial-gradient(ellipse 80% 60% at 50% 40%, #1a0d3a 0%, #0F0A1E 60%);
+      position: relative;
+      overflow: hidden;
+      text-align: center;
+    }
+
+    .circuit-lines {
+      position: absolute;
+      inset: 0;
+      opacity: 0.12;
+    }
+
+    .gear-float {
+      position: absolute;
+      font-size: 6rem;
+      animation: float 5s ease infinite;
+      opacity: 0.08;
+    }
+
+    .gear-1 { top: 15%; left: 8%; animation-delay: 0s; font-size: 5rem; }
+    .gear-2 { top: 20%; right: 10%; animation-delay: 2s; font-size: 8rem; }
+    .gear-3 { bottom: 20%; left: 15%; animation-delay: 1s; font-size: 4rem; }
+    .gear-4 { bottom: 15%; right: 8%; animation-delay: 3s; font-size: 6rem; }
+
+    .pulse-ring {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 600px;
+      height: 600px;
+      border-radius: 50%;
+      border: 1px solid rgba(124, 58, 237, 0.15);
+      animation: pulse-grow 4s ease infinite;
+    }
+    .pulse-ring-2 {
+      width: 400px;
+      height: 400px;
+      animation-delay: 1.5s;
+    }
+    .pulse-ring-3 {
+      width: 250px;
+      height: 250px;
+      animation-delay: 3s;
+    }
+
+    @keyframes pulse-grow {
+      0%   { transform: translate(-50%, -50%) scale(0.9); opacity: 0.5; }
+      50%  { opacity: 0.15; }
+      100% { transform: translate(-50%, -50%) scale(1.1); opacity: 0; }
+    }
+
+    .waitlist-input-wrap {
+      display: flex;
+      gap: 0.75rem;
+      max-width: 480px;
+      margin: 0 auto;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .waitlist-input {
+      flex: 1;
+      min-width: 250px;
+      padding: 0.875rem 1.5rem;
+      background: rgba(26, 16, 51, 0.8);
+      border: 1.5px solid rgba(124, 58, 237, 0.4);
+      border-radius: 50px;
+      color: #F8FAFC;
+      font-size: 0.95rem;
+      outline: none;
+      backdrop-filter: blur(10px);
+      transition: all 0.3s ease;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .waitlist-input:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.2);
+    }
+
+    .waitlist-input::placeholder { color: #64748B; }
+
+    .preview-card {
+      background: rgba(26, 16, 51, 0.6);
+      border: 1px solid rgba(124, 58, 237, 0.25);
+      border-radius: 16px;
+      padding: 1.5rem;
+      backdrop-filter: blur(10px);
+      transition: all 0.3s ease;
+    }
+
+    .preview-card:hover {
+      border-color: rgba(124, 58, 237, 0.5);
+      transform: translateY(-4px);
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav id="navbar" class="scrolled">
+  <div class="nav-container">
+    <a href="index.html" class="nav-logo"><img src="assert/progic_login.jpeg" alt="Progic Technologies" /></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="website-designing.html">Website Design</a></li>
+      <li><a href="digital-marketing.html">Digital Marketing</a></li>
+      <li><a href="robotics-automation.html">Robotics <span class="nav-badge">Soon</span></a></li>
+      <li><a href="other-services.html">Other Services</a></li>
+      <li><a href="contact.html" class="nav-cta">Get a Quote →</a></li>
+    </ul>
+    <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobile-menu">
+  <button class="mobile-close" id="mobile-close">✕</button>
+  <a href="index.html">Home</a>
+  <a href="website-designing.html">Website Design</a>
+  <a href="digital-marketing.html">Digital Marketing</a>
+  <a href="robotics-automation.html">Robotics <span class="nav-badge">Soon</span></a>
+  <a href="other-services.html">Other Services</a>
+  <a href="contact.html" class="btn btn-primary mt-4">Get a Quote →</a>
+</div>
+
+<!-- ROBOTICS HERO -->
+<section class="robotics-hero">
+  <!-- Background rings -->
+  <div class="pulse-ring"></div>
+  <div class="pulse-ring pulse-ring-2"></div>
+  <div class="pulse-ring pulse-ring-3"></div>
+
+  <!-- Floating gears -->
+  <div class="gear-float gear-1">⚙️</div>
+  <div class="gear-float gear-2">🤖</div>
+  <div class="gear-float gear-3">🔧</div>
+  <div class="gear-float gear-4">⚙️</div>
+
+  <!-- Circuit grid -->
+  <div class="hero-grid"></div>
+
+  <!-- Content -->
+  <div style="position:relative;z-index:5;padding:2rem;max-width:800px;">
+
+    <div class="coming-soon-badge hero-animate">
+      🚧 &nbsp; Draft — Coming Soon
+    </div>
+
+    <h1 class="hero-animate" style="font-size:clamp(2.5rem,7vw,5rem);font-weight:900;line-height:1.1;margin-bottom:1.25rem;">
+      The Future of <br /><span class="gradient-text">Robotics &amp; Automation</span><br />is Coming
+    </h1>
+
+    <p class="hero-animate" style="font-size:1.15rem;color:#94A3B8;line-height:1.7;max-width:600px;margin:0 auto 2.5rem;">
+      We're engineering next-generation automation solutions — AI-powered robots, intelligent process automation, and smart manufacturing systems. Be the first to experience it.
+    </p>
+
+    <!-- Waitlist Form -->
+    <form class="hero-animate" id="waitlist-form" style="margin-bottom:2rem;">
+      <div class="waitlist-input-wrap">
+        <input
+          type="email"
+          class="waitlist-input"
+          placeholder="Enter your email address"
+          required
+          id="waitlist-email"
+        />
+        <button type="submit" class="btn btn-accent">
+          🔔 Notify Me
+        </button>
+      </div>
+      <p style="font-size:0.8rem;color:#64748B;margin-top:0.75rem;">
+        No spam. Just one email when we launch. 🚀
+      </p>
+    </form>
+
+    <!-- Back link -->
+    <a href="index.html" style="font-size:0.9rem;color:#64748B;display:inline-flex;align-items:center;gap:0.4rem;transition:color 0.3s;" onmouseover="this.style.color='#9F67F0'" onmouseout="this.style.color='#64748B'">
+      ← Back to Home
+    </a>
+  </div>
+</section>
+
+<!-- TEASER PREVIEW -->
+<section class="section" style="background:var(--surface);border-top:1px solid var(--border);">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label reveal">A Sneak Peek</div>
+      <h2 class="section-title reveal">What We're <span class="gradient-text">Building</span></h2>
+      <p class="section-sub mx-auto reveal" style="margin:0 auto;">A glimpse into the capabilities we're developing to transform your business operations.</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="preview-card reveal delay-100">
+        <div style="font-size:2.5rem;margin-bottom:1rem;">🤖</div>
+        <h3 style="font-size:1.1rem;font-weight:700;margin-bottom:0.75rem;color:#F8FAFC;">Industrial Robotics</h3>
+        <p style="font-size:0.875rem;color:#94A3B8;line-height:1.6;">
+          Automated robotic arms and systems for manufacturing, assembly, and quality control — reducing human error and boosting throughput.
+        </p>
+        <div style="margin-top:1rem;padding:0.5rem 1rem;background:rgba(245,158,11,0.1);border:1px solid rgba(245,158,11,0.2);border-radius:50px;display:inline-block;font-size:0.75rem;color:#F59E0B;font-weight:600;">
+          🔮 In Development
+        </div>
+      </div>
+
+      <div class="preview-card reveal delay-200">
+        <div style="font-size:2.5rem;margin-bottom:1rem;">🧠</div>
+        <h3 style="font-size:1.1rem;font-weight:700;margin-bottom:0.75rem;color:#F8FAFC;">AI Process Automation</h3>
+        <p style="font-size:0.875rem;color:#94A3B8;line-height:1.6;">
+          Intelligent RPA (Robotic Process Automation) powered by AI — automate repetitive business workflows, data entry, and decision-making.
+        </p>
+        <div style="margin-top:1rem;padding:0.5rem 1rem;background:rgba(245,158,11,0.1);border:1px solid rgba(245,158,11,0.2);border-radius:50px;display:inline-block;font-size:0.75rem;color:#F59E0B;font-weight:600;">
+          🔮 In Development
+        </div>
+      </div>
+
+      <div class="preview-card reveal delay-300">
+        <div style="font-size:2.5rem;margin-bottom:1rem;">🏭</div>
+        <h3 style="font-size:1.1rem;font-weight:700;margin-bottom:0.75rem;color:#F8FAFC;">Smart Manufacturing</h3>
+        <p style="font-size:0.875rem;color:#94A3B8;line-height:1.6;">
+          IoT-connected production lines with real-time monitoring, predictive maintenance, and adaptive automation for Industry 4.0.
+        </p>
+        <div style="margin-top:1rem;padding:0.5rem 1rem;background:rgba(245,158,11,0.1);border:1px solid rgba(245,158,11,0.2);border-radius:50px;display:inline-block;font-size:0.75rem;color:#F59E0B;font-weight:600;">
+          🔮 In Development
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo"><img src="assert/progic_login.jpeg" alt="Progic Technologies" style="height:48px;border-radius:8px;" /></div>
+        <p class="footer-tagline">Transforming ideas into digital reality. Your growth partner for websites, marketing, automation, and talent.</p>
+        <div class="social-links">
+          <a href="#" class="social-link" aria-label="LinkedIn">in</a>
+          <a href="#" class="social-link" aria-label="Instagram">📸</a>
+          <a href="#" class="social-link" aria-label="Facebook">f</a>
+          <a href="#" class="social-link" aria-label="YouTube">▶</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Website Design</h4>
+        <ul class="footer-links">
+          <li><a href="website-designing.html">Basic Websites</a></li>
+          <li><a href="website-designing.html">React-Based</a></li>
+          <li><a href="website-designing.html">Google Sites</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Digital Marketing</h4>
+        <ul class="footer-links">
+          <li><a href="digital-marketing.html">Meta Ads</a></li>
+          <li><a href="digital-marketing.html">SEO</a></li>
+          <li><a href="digital-marketing.html">Google Ads</a></li>
+          <li><a href="digital-marketing.html">Social Media</a></li>
+          <li><a href="digital-marketing.html">YouTube</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul class="footer-links">
+          <li><a href="other-services.html">Manpower Sourcing</a></li>
+          <li><a href="robotics-automation.html">Robotics (Soon)</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+        <div style="margin-top:1.25rem;font-size:0.875rem;color:#64748B;">
+          <div style="margin-bottom:0.4rem;">📧 hello@progictechnologies.com</div>
+          <div style="margin-bottom:0.4rem;">📞 +91 98765 43210</div>
+          <div>📍 Chennai, Tamil Nadu, India</div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">© 2025 <span>Progic Technologies</span>. All rights reserved.</p>
+      <p class="footer-copy">Designed with ❤️ in India</p>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
