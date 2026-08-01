@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import logoImg from '../../public/assert/progic_login.jpeg';
 
 export default function Footer() {
   return (
@@ -16,7 +17,7 @@ export default function Footer() {
           <div className="footer-brand-block">
             <div className="footer-logo">
               <Image
-                src="/assert/progic_login.jpeg"
+                src={logoImg}
                 alt="Progic Technologies"
                 width={48}
                 height={48}

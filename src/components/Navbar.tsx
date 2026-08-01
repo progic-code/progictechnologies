@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
+import logoImg from '../../public/assert/progic_login.jpeg';
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -49,11 +50,12 @@ export default function Navbar() {
         <div className="nav-container">
           <Link href="/" className="nav-logo">
             <Image
-              src="/assert/progic_login.jpeg"
+              src={logoImg}
               alt="Progic Technologies"
               width={40}
               height={40}
               className="rounded-lg h-[40px] w-auto"
+              priority
             />
             <span className="nav-brand-name">PROGIC</span>
           </Link>

@@ -8,7 +8,11 @@ export const metadata: Metadata = {
   title: "Progic Studio — Websites people want to believe",
   description: "Progic Technologies designs high-converting websites and digital experiences for ambitious businesses.",
   icons: {
-    icon: "/assert/progic_login.jpeg",
+    icon: [
+      { url: "/favicon.png", type: "image/png" },
+      { url: "/icon.png", type: "image/png" },
+    ],
+    apple: "/apple-icon.png",
   },
 };
 
@@ -20,6 +24,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        <link rel="icon" href="/favicon.png" type="image/png" />
+        <link rel="apple-touch-icon" href="/apple-icon.png" />
         <link
           rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
