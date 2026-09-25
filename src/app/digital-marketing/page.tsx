@@ -130,7 +130,7 @@ export default function DigitalMarketing() {
                     <div>
                       <h5 style={{ fontWeight: 700, color: 'var(--accent)', marginBottom: '0.75rem' }}>What We Offer:</h5>
                       <div className="feature-item"><div className="feature-bullet"><i className="fa-solid fa-check text-xs"></i></div><div>Keyword research & competitor analysis</div></div>
-                      <div className="feature-item"><div className="feature-bullet"><i className="fa-solid fa-check text-xs"></i></div><div>On-page SEO (meta tags, content, structure)</div></div>
+                      <div className="feature-item"><div className="feature-bullet"><i className="fa-solid fa-check text-xs"></i></div><div>On-page SEO (meta tags,content, structure)</div></div>
                       <div className="feature-item"><div className="feature-bullet"><i className="fa-solid fa-check text-xs"></i></div><div>Technical SEO (speed, crawlability, schema)</div></div>
                       <div className="feature-item"><div className="feature-bullet"><i className="fa-solid fa-check text-xs"></i></div><div>Off-page SEO & link building</div></div>
                       <div className="feature-item"><div className="feature-bullet"><i className="fa-solid fa-check text-xs"></i></div><div>Local SEO & Google Business Profile</div></div>
