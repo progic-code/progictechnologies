@@ -95,7 +95,7 @@ export default function Contact() {
                       <input
                         type="tel"
                         id="phone"
-                        placeholder="+91 98765 43210"
+                        placeholder="+91 93858 02821"
                         value={formData.phone}
                         onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                         className="form-control"
@@ -168,7 +168,7 @@ export default function Contact() {
                   <div className="contact-icon"><i className="fa-solid fa-envelope text-primary-light"></i></div>
                   <div>
                     <div style={{ fontSize: '0.8rem', color: '#94A3B8', fontWeight: 500 }}>Email Us</div>
-                    <div style={{ fontWeight: 600, color: '#F8FAFC' }}>hello@progictechnologies.com</div>
+                    <a href="mailto:info@progictechnologies.com" style={{ fontWeight: 600, color: '#F8FAFC' }} className="hover:text-accent transition-colors">info@progictechnologies.com</a>
                   </div>
                 </div>
 
@@ -176,7 +176,7 @@ export default function Contact() {
                   <div className="contact-icon"><i className="fa-solid fa-phone text-accent"></i></div>
                   <div>
                     <div style={{ fontSize: '0.8rem', color: '#94A3B8', fontWeight: 500 }}>Call Us</div>
-                    <div style={{ fontWeight: 600, color: '#F8FAFC' }}>+91 98765 43210</div>
+                    <a href="tel:+919385802821" style={{ fontWeight: 600, color: '#F8FAFC' }} className="hover:text-accent transition-colors">+91 93858 02821</a>
                   </div>
                 </div>
 
@@ -184,7 +184,7 @@ export default function Contact() {
                   <div className="contact-icon"><i className="fa-solid fa-location-dot text-primary-light"></i></div>
                   <div>
                     <div style={{ fontSize: '0.8rem', color: '#94A3B8', fontWeight: 500 }}>Headquarters</div>
-                    <div style={{ fontWeight: 600, color: '#F8FAFC' }}>Chennai, Tamil Nadu, India</div>
+                    <div style={{ fontWeight: 600, color: '#F8FAFC' }}>Tamil Nadu, India</div>
                   </div>
                 </div>
 

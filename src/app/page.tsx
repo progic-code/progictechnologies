@@ -1,69 +1,279 @@
 import Link from 'next/link';
 import ClientEffects from '@/components/ClientEffects';
 
-const offerings = [
-  { number: '01', icon: 'fa-solid fa-wand-magic-sparkles', title: 'Launch websites', text: 'Sharp, strategic websites for businesses ready to look as good as they are.', tag: 'For bold beginnings', className: 'offer-primary' },
-  { number: '02', icon: 'fa-solid fa-code', title: 'Digital products', text: 'React and Next.js experiences for ideas that need more interaction, data, and room to scale.', tag: 'For big ideas', className: 'offer-secondary' },
-  { number: '03', icon: 'fa-solid fa-bolt', title: 'Fast-track sites', text: 'Clean Google Sites and landing pages when you need to move quickly without looking rushed.', tag: 'For right now', className: 'offer-tertiary' },
+import { ReactNode } from 'react';
+
+interface ServiceItem {
+  number: string;
+  label: string;
+  title: ReactNode;
+  text: string;
+  icon: string;
+  href: string;
+  tags: string[];
+  className: string;
+}
+
+const services: ServiceItem[] = [
+  {
+    number: '01',
+    label: 'Web design',
+    title: (
+      <>
+        Make your first impression{' '}
+        <span className="glass-gradient-text">impossible to ignore.</span>
+      </>
+    ),
+    text: 'Strategy-led websites, digital products, and landing pages that make your business easy to understand and hard to forget.',
+    icon: 'fa-solid fa-wand-magic-sparkles',
+    href: '/website-designing',
+    tags: ['Brand websites', 'React / Next.js', 'Google Sites'],
+    className: 'all-service-web',
+  },
+  {
+    number: '02',
+    label: 'Digital marketing',
+    title: (
+      <>
+        Turn attention into{' '}
+        <span className="glass-gradient-text">actual momentum.</span>
+      </>
+    ),
+    text: 'Organic growth, paid campaigns, content, and conversion funnels built around the people you want to reach.',
+    icon: 'fa-solid fa-chart-line',
+    href: '/digital-marketing',
+    tags: ['SEO', 'Paid ads', 'Growth funnels'],
+    className: 'all-service-marketing',
+  },
+  {
+    number: '03',
+    label: 'Robotics & automation',
+    title: (
+      <>
+        Build what the future{' '}
+        <span className="glass-gradient-text">needs next.</span>
+      </>
+    ),
+    text: 'From robotics education and R&D to smart factory systems and control software, we connect ideas to real-world action.',
+    icon: 'fa-solid fa-robot',
+    href: '/robotics-automation',
+    tags: ['R&D', 'Industrial automation', 'Control software'],
+    className: 'all-service-robotics',
+  },
+  {
+    number: '04',
+    label: 'Talent & growth services',
+    title: (
+      <>
+        Put the right people{' '}
+        <span className="glass-gradient-text">behind the work.</span>
+      </>
+    ),
+    text: 'Flexible staffing, permanent hiring, and dedicated project teams for the next stage of your business.',
+    icon: 'fa-solid fa-people-group',
+    href: '/other-services',
+    tags: ['Contract staffing', 'Permanent hiring', 'Project teams'],
+    className: 'all-service-talent',
+  },
 ];
 
-const steps = [
-  ['01', 'Talk it out', 'Your goals, your audience, your vibe.'],
-  ['02', 'Make it visual', 'We turn the messy ideas into a clear direction.'],
-  ['03', 'Make it real', 'We build, refine, launch, and stay in your corner.'],
+const connections = [
+  ['01', 'Clarify the opportunity', 'We start with the business problem, not a pre-selected service.'],
+  ['02', 'Choose the right mix', 'Sometimes you need a website. Sometimes you need the team, growth, or system behind it.'],
+  ['03', 'Make it move', 'We turn the plan into a useful, memorable, measurable next step.'],
 ];
 
 export default function Home() {
   return (
-    <div className="glass-home">
+    <div className="services-home">
       <ClientEffects />
-
-      <section className="glass-hero">
-        <div className="glass-orb glass-orb-one" /><div className="glass-orb glass-orb-two" /><div className="glass-noise" />
-        <div className="container glass-hero-inner">
-          <div className="glass-hero-copy">
-            <div className="glass-eyebrow hero-animate"><span className="glass-live-dot" /> Progic / web design studio</div>
-            <h1 className="hero-animate">Websites with <span className="glass-gradient-text">main-character</span> energy.</h1>
-            <p className="hero-animate">Not another template. Not another forgettable homepage. We make digital spaces that feel like your brand on its best day.</p>
-            <div className="flex gap-3 flex-wrap hero-animate"><Link href="/contact" className="glass-button glass-button-primary">Let&apos;s make yours <i className="fa-solid fa-arrow-up-right-from-square" /></Link><Link href="#offerings" className="glass-button glass-button-ghost">See the possibilities <i className="fa-solid fa-arrow-down" /></Link></div>
-            <div className="glass-hero-meta hero-animate"><span><i className="fa-solid fa-circle-check" /> Strategy first</span><span><i className="fa-solid fa-circle-check" /> Design obsessed</span><span><i className="fa-solid fa-circle-check" /> Built to grow</span></div>
-          </div>
-
-          <div className="glass-hero-art hero-animate">
-            <div className="glass-floating-chip glass-chip-top"><i className="fa-solid fa-sparkles" /> Your brand, but louder.</div>
-            <div className="glass-browser-window">
-              <div className="glass-browser-head"><div><i /><i /><i /></div><span>your-next-site.com</span><b>•••</b></div>
-              <div className="glass-browser-body"><small>NEW DIGITAL PRESENCE</small><strong>Make them<br /><em>stop scrolling.</em></strong><div className="glass-browser-pill">Explore your story <i className="fa-solid fa-arrow-right" /></div><div className="glass-browser-sphere" /></div>
+      
+      {/* HERO SECTION */}
+      <section className="services-home-hero">
+        <div className="services-home-orb services-home-orb-one" />
+        <div className="services-home-orb services-home-orb-two" />
+        <div className="services-home-grid" />
+        <div className="container services-home-hero-inner">
+          <div className="services-home-copy">
+            <div className="glass-eyebrow hero-animate">
+              <span className="glass-live-dot" /> Progic Technologies / the bigger picture
             </div>
-            <div className="glass-floating-chip glass-chip-bottom"><span className="glass-mini-avatar">P</span><span><b>Progic Studio</b><small>Designing your next move</small></span><i className="fa-solid fa-arrow-up-right-from-square" /></div>
+            <h1 className="hero-animate">
+              Everything your next chapter needs to <span className="glass-gradient-text">move forward.</span>
+            </h1>
+            <p className="hero-animate">
+              We design the digital presence, growth systems, intelligent technology, and teams that help ambitious businesses take their next step.
+            </p>
+            <div className="flex gap-3 flex-wrap hero-animate">
+              <Link href="/contact" className="glass-button glass-button-primary">
+                Tell us what you&apos;re building <i className="fa-solid fa-arrow-right" />
+              </Link>
+              <a href="#offerings" className="glass-button glass-button-ghost">
+                Explore all services <i className="fa-solid fa-arrow-down" />
+              </a>
+            </div>
+          </div>
+          <div className="services-home-stack hero-animate">
+            <div className="services-stack-label">ONE PARTNER / FOUR DIRECTIONS</div>
+            <div className="services-stack-card stack-card-four">
+              <i className="fa-solid fa-people-group" />
+              <span>Talent &amp; growth</span>
+            </div>
+            <div className="services-stack-card stack-card-three">
+              <i className="fa-solid fa-robot" />
+              <span>Robotics &amp; automation</span>
+            </div>
+            <div className="services-stack-card stack-card-two">
+              <i className="fa-solid fa-chart-line" />
+              <span>Digital marketing</span>
+            </div>
+            <div className="services-stack-card stack-card-one">
+              <i className="fa-solid fa-wand-magic-sparkles" />
+              <span>Web design</span>
+              <b>↗</b>
+            </div>
           </div>
         </div>
-        <div className="glass-scroll-cue"><span /> scroll to explore</div>
       </section>
 
-      <div className="glass-marquee"><div className="container glass-marquee-inner"><span>Web design</span><i className="fa-solid fa-asterisk" /><span>Brand direction</span><i className="fa-solid fa-asterisk" /><span>Digital experiences</span><i className="fa-solid fa-asterisk" /><span>Good energy only</span></div></div>
-
-      <section className="section glass-section" id="offerings">
+      {/* STRIP */}
+      <div className="services-home-strip">
         <div className="container">
-          <div className="glass-section-heading"><div><div className="glass-eyebrow reveal">What we do</div><h2 className="reveal">Pick your <span className="glass-gradient-text">power-up.</span></h2></div><p className="reveal">From “I need a website” to “I need a whole digital world” — there&apos;s a way in.</p></div>
-          <div className="glass-offerings-grid">
-            {offerings.map((offering, index) => <article className={`glass-offering-card ${offering.className} reveal delay-${(index + 1) * 100}`} key={offering.number}><div className="glass-offering-top"><span>{offering.number}</span><i className={offering.icon} /></div><div><small>{offering.tag}</small><h3>{offering.title}</h3><p>{offering.text}</p></div><Link href="/contact" aria-label={`Discuss ${offering.title}`}><i className="fa-solid fa-arrow-up-right-from-square" /></Link></article>)}
+          <span>One team</span>
+          <i className="fa-solid fa-asterisk" />
+          <span>Different disciplines</span>
+          <i className="fa-solid fa-asterisk" />
+          <span>Shared ambition</span>
+          <i className="fa-solid fa-asterisk" />
+          <span>Your next move</span>
+        </div>
+      </div>
+
+      {/* ALL SERVICES SECTION */}
+      <section className="section all-services-section" id="offerings">
+        <div className="container">
+          <div className="section-header all-services-heading">
+            <div className="glass-eyebrow reveal">What we offer</div>
+            <h2 className="reveal">
+              Four ways to get <span className="glass-gradient-text">unstuck.</span>
+            </h2>
+            <p className="reveal">
+              Start with the challenge. We&apos;ll help you find the right capability, not force you into a package.
+            </p>
+          </div>
+          <div className="all-services-grid">
+            {services.map((service, index) => (
+              <article
+                className={`all-service-card ${service.className} reveal delay-${(index + 1) * 100}`}
+                key={service.number}
+              >
+                <div className="all-service-top">
+                  <span>{service.number}</span>
+                  <i className={service.icon} />
+                </div>
+                <div className="service-highlight-badge">
+                  <span className="service-badge-dot" />
+                  {service.label}
+                </div>
+                <h3 className="service-card-title">{service.title}</h3>
+                <p className="service-card-desc">{service.text}</p>
+                <div className="all-service-tags">
+                  {service.tags.map((tag) => (
+                    <span key={tag}>{tag}</span>
+                  ))}
+                </div>
+                <Link href={service.href} className="all-service-link">
+                  Explore service <i className="fa-solid fa-arrow-up-right-from-square" />
+                </Link>
+              </article>
+            ))}
           </div>
         </div>
       </section>
 
-      <section className="section glass-case-section" id="case-study">
-        <div className="container glass-case-grid">
-          <div className="glass-case-visual reveal"><div className="glass-case-window"><div className="glass-case-window-head"><span>deepseedtechnologies.com</span><i className="fa-solid fa-arrow-up-right-from-square" /></div><div className="glass-case-window-body"><small>FIVE TECHNOLOGY DIVISIONS</small><strong>Seeding the<br /><em>future.</em></strong><div className="glass-case-lines"><span /><span /><span /></div></div></div><span className="glass-case-sticker">FIRST<br />PROJECT<br /><b>↗ LIVE</b></span></div>
-          <div className="glass-case-copy"><div className="glass-eyebrow reveal">One real case study</div><h2 className="reveal">A big, complex story — made <span className="glass-gradient-text">easy to get.</span></h2><p className="reveal">For Deepseed Technologies, we created a digital home for robotics, automation, software, digital marketing, and their training academy — all under one clear experience.</p><div className="glass-case-tags reveal"><span>Strategy</span><span>Visual design</span><span>Development</span><span>Launch</span></div><a href="https://www.deepseedtechnologies.com/" target="_blank" rel="noreferrer" className="glass-button glass-button-ghost reveal">See the live website <i className="fa-solid fa-arrow-up-right-from-square" /></a></div>
+      {/* HOW WE THINK SECTION */}
+      <section className="section services-connection-section">
+        <div className="container">
+          <div className="services-connection-heading">
+            <div>
+              <div className="glass-eyebrow reveal">How we think</div>
+              <h2 className="reveal">
+                The right answer is usually <span className="glass-gradient-text">connected.</span>
+              </h2>
+            </div>
+            <p className="reveal">
+              A website can create the first impression. Marketing can bring the right people in. Technology and talent help you keep moving.
+            </p>
+          </div>
+          <div className="services-connection-grid">
+            {connections.map(([number, title, text], index) => (
+              <div className="services-connection-card reveal" key={number}>
+                <span>{number}</span>
+                <h3>{title}</h3>
+                <p>{text}</p>
+                {index < 2 && <i className="fa-solid fa-arrow-right" />}
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
-      <section className="section glass-process-section">
-        <div className="container"><div className="glass-section-heading"><div><div className="glass-eyebrow reveal">How it works</div><h2 className="reveal">Low stress. <span className="glass-gradient-text">High impact.</span></h2></div><p className="reveal">You bring the ambition. We bring the plan, taste, and pixels.</p></div><div className="glass-steps">{steps.map(([number, title, text], index) => <div className="glass-step reveal" key={number}><div className="glass-step-number">{number}</div><h3>{title}</h3><p>{text}</p>{index < steps.length - 1 && <i className="fa-solid fa-arrow-right glass-step-arrow" />}</div>)}</div></div>
+      {/* CASE STUDY SECTION */}
+      <section className="section services-case-section" id="case-study">
+        <div className="container services-case-grid">
+          <div className="services-case-art reveal">
+            <div className="services-case-window">
+              <small>DEEPSEED TECHNOLOGIES</small>
+              <strong>
+                One connected<br />
+                <em>technology hub.</em>
+              </strong>
+              <div>
+                <span>Web</span>
+                <span>Growth</span>
+                <span>Robotics</span>
+                <span>Software</span>
+              </div>
+            </div>
+            <b>01 / LIVE CASE STUDY</b>
+          </div>
+          <div>
+            <div className="glass-eyebrow reveal">Our first website</div>
+            <h2 className="reveal">
+              A complex business made <span className="glass-gradient-text">clear.</span>
+            </h2>
+            <p className="reveal">
+              For Deepseed Technologies, we created a digital home that brings robotics, automation, software, digital marketing, and education into one confident story.
+            </p>
+            <a
+              href="https://www.deepseedtechnologies.com/"
+              target="_blank"
+              rel="noreferrer"
+              className="glass-button glass-button-ghost reveal"
+            >
+              Visit the live website <i className="fa-solid fa-arrow-up-right-from-square" />
+            </a>
+          </div>
+        </div>
       </section>
 
-      <section className="glass-final-cta"><div className="glass-orb glass-orb-cta" /><div className="container"><div className="glass-eyebrow">Your sign to start</div><h2>Make your website<br /><span className="glass-gradient-text">the one they remember.</span></h2><p>Bring the rough idea. We&apos;ll help you turn it into something people want to click.</p><Link href="/contact" className="glass-button glass-button-primary">Start a conversation <i className="fa-solid fa-arrow-right" /></Link></div></section>
+      {/* CTA SECTION */}
+      <section className="services-home-cta">
+        <div className="services-home-orb services-home-orb-cta" />
+        <div className="container">
+          <div className="glass-eyebrow">Start anywhere</div>
+          <h2>
+            Have a problem,<br />
+            <span className="glass-gradient-text">not a service name?</span>
+          </h2>
+          <p>
+            That&apos;s exactly where we&apos;re useful. Tell us what you want to improve and we&apos;ll help you shape the next move.
+          </p>
+          <Link href="/contact" className="glass-button glass-button-primary">
+            Start a conversation <i className="fa-solid fa-arrow-right" />
+          </Link>
+        </div>
+      </section>
     </div>
   );
 }

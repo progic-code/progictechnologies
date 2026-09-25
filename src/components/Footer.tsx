@@ -72,9 +72,9 @@ export default function Footer() {
               <li><Link href="/contact">Contact Us</Link></li>
             </ul>
             <div className="footer-contact-list">
-              <a href="mailto:hello@progictechnologies.com"><i className="fa-solid fa-envelope" /> hello@progictechnologies.com</a>
-              <a href="tel:+919876543210"><i className="fa-solid fa-phone" /> +91 98765 43210</a>
-              <span><i className="fa-solid fa-location-dot" /> Chennai, Tamil Nadu, India</span>
+              <a href="mailto:info@progictechnologies.com"><i className="fa-solid fa-envelope" /> info@progictechnologies.com</a>
+              <a href="tel:+919385802821"><i className="fa-solid fa-phone" /> +91 93858 02821</a>
+              <span><i className="fa-solid fa-location-dot" /> Tamil Nadu, India</span>
             </div>
           </div>
         </div>

@@ -9,6 +9,7 @@ import logoImg from '../../public/assert/progic_login.jpeg';
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [theme, setTheme] = useState<'cosmic' | 'light'>('cosmic');
   const pathname = usePathname();
 
   useEffect(() => {
@@ -31,9 +32,47 @@ export default function Navbar() {
     }
   }, [mobileOpen]);
 
+  // Sync theme with initial attribute or preferences
+  useEffect(() => {
+    const currentAttr = document.documentElement.getAttribute('data-theme');
+    const saved = localStorage.getItem('progic_theme');
+
+    let resolved: 'cosmic' | 'light' = 'cosmic';
+    if (saved === 'light' || saved === 'cosmic') {
+      resolved = saved;
+    } else if (currentAttr === 'light' || currentAttr === 'cosmic') {
+      resolved = currentAttr;
+    } else {
+      const prefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
+      resolved = prefersLight ? 'light' : 'cosmic';
+    }
+
+    setTheme(resolved);
+    document.documentElement.setAttribute('data-theme', resolved);
+
+    const mediaQuery = window.matchMedia('(prefers-color-scheme: light)');
+    const handleSchemeChange = (e: MediaQueryListEvent) => {
+      if (!localStorage.getItem('progic_theme')) {
+        const next = e.matches ? 'light' : 'cosmic';
+        setTheme(next);
+        document.documentElement.setAttribute('data-theme', next);
+      }
+    };
+    mediaQuery.addEventListener('change', handleSchemeChange);
+
+    return () => mediaQuery.removeEventListener('change', handleSchemeChange);
+  }, []);
+
+  const toggleTheme = () => {
+    const next = theme === 'light' ? 'cosmic' : 'light';
+    setTheme(next);
+    document.documentElement.setAttribute('data-theme', next);
+    localStorage.setItem('progic_theme', next);
+  };
+
   const navLinks: { href: string; label: string; badge?: string; featured?: boolean }[] = [
-    { href: '/home', label: 'Home' },
-    { href: '/', label: 'Web Design', featured: true },
+    { href: '/', label: 'Home' },
+    { href: '/website-designing', label: 'Web Design', featured: true },
     { href: '/digital-marketing', label: 'Digital Marketing' },
     { href: '/robotics-automation', label: 'Robotics' },
     { href: '/other-services', label: 'Other Services' },
@@ -73,17 +112,24 @@ export default function Navbar() {
                 </Link>
               </li>
             ))}
-            {/* <li>
+
+            {/* Light / Dark Mode Icon */}
+            <li>
               <button
                 type="button"
-                onClick={() => window.dispatchEvent(new Event('open-theme-switcher'))}
-                className="px-3 py-2 text-xs font-bold rounded-full border border-[var(--glass-border)] bg-[var(--surface-2)] text-[var(--text)] hover:border-[var(--accent)] hover:text-[var(--accent)] transition-all flex items-center gap-1.5 cursor-pointer"
-                title="Change Color Palette"
+                onClick={toggleTheme}
+                className="w-9 h-9 rounded-full border border-[var(--glass-border)] bg-[var(--surface-2)] text-[var(--text)] hover:border-[var(--accent)] hover:text-[var(--accent)] transition-all flex items-center justify-center cursor-pointer shadow-sm"
+                title={theme === 'light' ? 'Switch to Dark Mode (Studio Noir)' : 'Switch to Light Mode (Light Crystal)'}
+                aria-label="Toggle Light / Dark Mode"
               >
-                <i className="fa-solid fa-palette text-accent"></i>
-                <span>Palette</span>
+                {theme === 'light' ? (
+                  <i className="fa-solid fa-moon text-indigo-400 text-sm"></i>
+                ) : (
+                  <i className="fa-solid fa-sun text-amber-400 text-sm"></i>
+                )}
               </button>
-            </li> */}
+            </li>
+
             <li>
               <Link href="/contact" className="nav-cta">
                 Get a Quote <i className="fa-solid fa-arrow-right ms-1"></i>
@@ -125,15 +171,21 @@ export default function Navbar() {
           </Link>
         ))}
 
+        {/* Mobile Light / Dark Toggle */}
         <button
           type="button"
-          onClick={() => {
-            setMobileOpen(false);
-            window.dispatchEvent(new Event('open-theme-switcher'));
-          }}
-          className="btn btn-outline mt-2 flex items-center justify-center gap-2"
+          onClick={toggleTheme}
+          className="btn btn-outline mt-3 flex items-center justify-center gap-2 text-xs"
         >
-          <i className="fa-solid fa-palette text-accent"></i> Change Color Palette
+          {theme === 'light' ? (
+            <>
+              <i className="fa-solid fa-moon text-indigo-400"></i> Dark Mode (Studio Noir)
+            </>
+          ) : (
+            <>
+              <i className="fa-solid fa-sun text-amber-400"></i> Light Mode (Light Crystal)
+            </>
+          )}
         </button>
 
         <Link

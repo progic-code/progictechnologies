@@ -5,8 +5,9 @@ import ThemeSwitcher from "@/components/ThemeSwitcher";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Progic Studio — Websites people want to believe",
-  description: "Progic Technologies designs high-converting websites and digital experiences for ambitious businesses.",
+  title: "Progic Technologies — Transforming Ideas into Reality",
+  description:
+    "Progic Technologies provides Web Designing, Digital Marketing, Robotics & Automation, and Talent Solutions based in Tamil Nadu, India.",
   icons: {
     icon: [
       { url: "/favicon.png", type: "image/png" },
@@ -22,13 +23,31 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <head>
         <link rel="icon" href="/favicon.png" type="image/png" />
         <link rel="apple-touch-icon" href="/apple-icon.png" />
         <link
           rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        />
+        {/* Anti-flash theme init: default light is Light Crystal ('light'), default dark is Studio Noir ('cosmic') */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                try {
+                  var saved = localStorage.getItem('progic_theme');
+                  if (saved) {
+                    document.documentElement.setAttribute('data-theme', saved);
+                  } else {
+                    var prefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
+                    document.documentElement.setAttribute('data-theme', prefersLight ? 'light' : 'cosmic');
+                  }
+                } catch (e) {}
+              })();
+            `,
+          }}
         />
       </head>
       <body>
